@@ -8,19 +8,20 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        PrintService<String> ps = new PrintService<>();
+
+
         System.out.print("How many values? ");
         int values = sc.nextInt();
 
-        PrintService ps = new PrintService();
-
         for (int i = 0; i < values; i++) {
-            int value = sc.nextInt();
+            String value = sc.next();
             ps.addValue(value);
         }
 
         ps.print();
-
-        System.out.println("First: " + ps.first());
+        String x = ps.first();
+        System.out.println("First: " + x);
 
         sc.close();
     }
